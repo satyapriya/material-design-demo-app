@@ -1,0 +1,146 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="ionicDemoApp">
+    <!-- Add your site or application content here -->
+    <div class="container">
+      <div ng-controller="AppCtrl">
+        <md-content>
+          <section layout="row" layout-sm="column" layout-align="center center">
+            <md-button>{{title1}}</md-button>
+            <md-button md-no-ink class="md-primary">Primary (md-noink)</md-button>
+            <md-button ng-disabled="true" class="md-primary">Disabled</md-button>
+            <md-button class="md-warn">{{title4}}</md-button>
+          </section>
+          <section layout="row" layout-sm="column" layout-align="center center">
+            <md-button class="md-raised">Button</md-button>
+            <md-button class="md-raised md-primary">Primary</md-button>
+            <md-button ng-disabled="true" class="md-raised md-primary">Disabled</md-button>
+            <md-button class="md-raised md-warn">Warn</md-button>
+            <div class="label">raised</div>
+          </section>
+          <section layout="row" layout-sm="column" layout-align="center center">
+              <md-button class="md-fab" aria-label="Time">
+                  <md-icon icon="/img/icons/ic_access_time_24px.svg" style="width: 24px; height: 24px;"></md-icon>
+              </md-button>
+            <md-button class="md-fab" aria-label="New document">
+              <md-icon icon="/img/icons/ic_insert_drive_file_24px.svg" style="width: 24px; height: 24px;"></md-icon>
+            </md-button>
+              <md-button class="md-fab" ng-disabled="true" aria-label="Comment">
+                  <md-icon icon="/img/icons/ic_comment_24px.svg" style="width: 24px; height: 24px;"></md-icon>
+              </md-button>
+              <md-button class="md-fab md-primary" md-theme="cyan" aria-label="Profile">
+                  <md-icon icon="/img/icons/ic_people_24px.svg" style="width: 24px; height: 24px;"></md-icon>
+              </md-button>
+            <div class="label">FAB</div>
+          </section>
+          <section layout="row" layout-sm="column" layout-align="center center">
+              <md-button ng-href="{{googleUrl}}" target="_blank">Go to Google</md-button>
+              <md-button>RSVP</md-button>
+          </section>
+          <section layout="row" layout-sm="column" layout-align="center center">
+            <md-button class="md-primary md-hue-1">Primary Hue 1</md-button>
+            <md-button class="md-warn md-raised md-hue-2">Warn Hue 2</md-button>
+            <md-button class="md-accent">Accent</md-button>
+            <md-button class="md-accent md-raised md-hue-3">Accent Hue 3</md-button>
+            <div class="label">Themed</div>
+          </section>
+        </md-content>
+
+        <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
+          Checkbox 1: {{ data.cb1 }}
+        </md-checkbox>
+        <md-checkbox ng-model="data.cb2" aria-label="Checkbox 2" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn">
+          Checkbox 2 (md-warn): {{ data.cb2 }}
+        </md-checkbox>
+        <md-checkbox ng-disabled="true" aria-label="Disabled checkbox" ng-model="data.cb3">
+          Checkbox: Disabled
+        </md-checkbox>
+        <md-checkbox ng-disabled="true" aria-label="Disabled checked checkbox" ng-model="data.cb4" ng-init="data.cb4=true">
+          Checkbox: Disabled, Checked
+        </md-checkbox>
+        <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="data.cb5" class="md-primary">
+          Checkbox (md-primary): No Ink
+        </md-checkbox>
+
+        <div ng-controller="AppCtrl" class="full" layout="column" layout-margin>
+          <p class="inset">
+            Open a dialog over the app's content. Press escape or click outside to close the dialog.
+          </p>
+          <div layout="column" layout-align="center">
+            <md-button class="md-primary" ng-click="showAlert($event)">
+              Alert Dialog
+            </md-button>
+            <div class="gap"></div>
+            <md-button class="md-primary" ng-click="showConfirm($event)">
+              Confirm Dialog
+            </md-button>
+            <div class="gap"></div>
+            <md-button class="md-primary" ng-click="showAdvanced($event)">
+              Custom Dialog
+            </md-button>
+          </div>
+          <br/>
+          <b layout="row" layout-align="center center" layout-margin>
+            {{alert}}
+          </b>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/hammerjs/hammer.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
